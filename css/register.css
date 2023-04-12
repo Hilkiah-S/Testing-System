@@ -1,19 +1,33 @@
   
-body {
-      font-family: 'Roboto', sans-serif;
-      background-image: url("../images/pic3.jpg");
-      background-attachment: fixed;
-      background-color: #ffffff;     
-      
-    }
+  body {
+	background-image: url(../img/pic3.jpg);
+	background-size: cover;
+	background-position: top center;
+	z-index: 1;
+}
+
+body::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.7;
+	z-index: -1;
+}
+
 .form-control:focus {
   border-color: #63cdda;
   box-shadow: none;
 }
+
 .btn-primary {
   background-color: #2a8dce;
   border-color: #2a8dce;
 }
+
 .btn-primary:hover, .btn-primary:focus {
   background-color: #55c2da;
   border-color: #55c2da;
@@ -22,13 +36,15 @@ body {
 .label{
   font-weight: bold;
 }
+
 .form-container {
   background-color: #fff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  background-color: rgb(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255,0.4);
 }
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -37,5 +53,5 @@ body {
   line-height: 60px;
   background-color: #f8f9fa;
   text-align: center;
-  background-color: rgb(255, 255, 255,0.4);
+  background-color: rgba(255, 255, 255,0.3);
 }
