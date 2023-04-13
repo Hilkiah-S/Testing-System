@@ -1,11 +1,12 @@
 
-<?php include"connect.php";
+<?php session_start();
+
 if(!isset($_SESSION['id'])){
 header("Location:unauthorizedentry.html");
 }
 ?>
 <?php 
-session_start();
+
 include"connect.php";
 // echo($_SESSION['id']);
 ?>
@@ -60,7 +61,9 @@ input[type="radio"]:checked + .answer-label {
                 <a class="nav-link" href="#">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
+              <form action="logout.php" method="post">
+  <button type="submit"  class="nav-link" style="background-color: transparent;border:none">Logout</button>
+</form>
               </li>
             </ul>
           </div>

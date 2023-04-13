@@ -1,6 +1,6 @@
 
 
-<?php include"connect.php";
+<?php 
 if(!isset($_SESSION['id'])){
 header("Location:unauthorizedentry.html");
 }

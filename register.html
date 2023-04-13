@@ -12,49 +12,11 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
   <link href="css/register.css" rel="stylesheet" type="text/css" />
+  
+  
 </head>
 <body>
-  <script>
-    function validateForm() {
-  var fullname = document.getElementsById("name").value;
-  var email = document.getElementsById("email").value;
-  var phone = document.getElementsById("phone").value;
-  var password = document.getElementsById("password").value;
-  var confirm_password = document.getElementsById("password_confirmation").value;
-
-  // Validate Full Name
-  let fullname_regex = /^[a-zA-Z ]+$/;
-  if (!fullname_regex.test(fullname)) {
-    alert("Full name should only contain letters and spaces.");
-    return false;
-  }
-
-  // Validate Email
-  let email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email_regex.test(email)) {
-    alert("Invalid email address.");
-    return false;
-  }
-
-  // Validate Phone Number
-  let phone_regex = /^[0-9]{10}$/;
-  if (!phone_regex.test(phone)) {
-    alert("Phone number should be 10 digits long and contain only numbers.");
-    return false;
-  }
-
-  // Validate Password
-  if (password != confirm_password) {
-    alert("Passwords do not match.");
-    return false;
-  }
-
-  return true;
-}
-
-
-
-  </script>
+  
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -64,7 +26,7 @@
             <h4  class="label" >Sign up</h4>
           </div>
           <!-- <form method="POST" action="register.php"  enctype="multipart/form-data"> -->
-            <form method="POST" action="register.php"  enctype="multipart/form-data">
+            <form method="POST" action="register.php" onsubmit="return validateForm()" enctype="multipart/form-data">
 
             <div class="form-group">
                 <label class="label" for="name">Name </label>
@@ -90,7 +52,7 @@
                  <div class="input-group-prepend">
                    <span class="input-group-text"><i class="fas fa-phone"></i></span>
                  </div>
-                 <input type="number" name="email" class="form-control" id="phone" placeholder="Enter phone number" required> 
+                 <input type="number" name="phone" class="form-control" id="phone" placeholder="Enter phone number" maxlength="10" required> 
                </div>
              </div>
             <div class="form-group">
@@ -114,14 +76,61 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
                   </div>
-                  <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirm password" required>
+                  <input type="password" name="password_confirmation" name="confirm_password" class="form-control" id="password_confirmation" placeholder="Confirm password" required>
                  </div>
               </div>
               <button type="submit" class="btn btn-primary btn-block" name="submit" onclick="return validateForm()">Register</button>
           </form>
+          <script>
+            function validateForm() {
+              var firstname = document.getElementsByName("fullname")[0].value;
+              console.log(firstname);
+             
+              var email = document.getElementsByName("email")[0].value;
+              var phone = document.getElementsByName("phone")[0].value;
+              var password= document.getElementsByName("password")[0].value;
+              console.log(password);
+              var confirm_password = document.getElementsByName("password_confirmation")[0].value;
+              console.log(confirm_password);
+              // Check if name fields contain numbers
+              if (/\d/.test(firstname)) {
+                alert("Name fields should not contain numbers.");
+                return false;
+              }
+          
+              // Check if email is valid
+              if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+                alert("Invalid email address.");
+                return false;
+              }
+          
+              // Check if phone field is empty
+              if (phone === "") {
+                alert("Phone number field cannot be empty.");
+                return false;
+              }
+          
+              // Check if phone field contains only numbers
+              if (isNaN(phone)) {
+                alert("Phone number field should contain only numbers.");
+                return false;
+              }
+              if(phone.length>10){
+                alert("Phone number should only be 10 digits");
+                return false;
+              }
+              if (password!=confirm_password) {
+                alert("Your Passwords must match");
+                return false;
+              }
+              
+          
+              return true;
+            }
+          </script>
           <div class="mt-3 text-center">
             <span>Already registered?</span>
-            <a href="/">Login</a>
+            <a href="login.php">Login</a>
           </div>
         </div>
       </div>

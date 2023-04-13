@@ -54,7 +54,9 @@ else{
                 <a class="nav-link" href="#">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
+              <form action="logout.php" method="post">
+  <button type="submit"  class="nav-link" style="background-color: transparent;border:none">Logout</button>
+</form>
               </li>
             </ul>
           </div>

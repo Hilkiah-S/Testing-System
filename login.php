@@ -29,9 +29,9 @@ else if ($mail==$rowone['email'] && $userpassword==$rowone['password']) {
   $_SESSION['id']=$rowone['ID'];
   header("Location:add_courses.php");}
   else{
-    echo"<script>alert('Not verified yet!')</script>";
+    echo("<script>alert('Not verified yet!')</script>");
     
-    header("Location:loadingpage.php");
+    header("Location:unauthorizedentry.html");
     
   }
   // header("Location:adminpage.php?id=1&email=$email");
@@ -41,9 +41,9 @@ else if($mail==$rowtwo['email'] && $userpassword==$rowtwo['password']){
 header("Location:viewallteachers.php");
 }
 else{
-  echo "<script>
+  echo ("<script>
   alert('email or password is incorrect');
-  </script>";
+  </script>");
 }
 }
 ?>

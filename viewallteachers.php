@@ -1,11 +1,8 @@
 
-<?php include"connect.php";
-if(!isset($_SESSION['id'])){
-header("Location:unauthorizedentry.html");
-}
-?>
+<?php 
+session_start();
 
-<?php
+
 // Define the function you want to call
 // function myFunction() {
 //     // Do something
@@ -19,9 +16,9 @@ header("Location:unauthorizedentry.html");
 ?>
 
 <?php include"connect.php";
-if(!isset($_SESSION['id'])){
-header("Location:unauthorizedentry.html");
-}
+// if(!isset($_SESSION['id'])){
+// header("Location:unauthorizedentry.html");
+// }
 ?>
 
 <!DOCTYPE html>

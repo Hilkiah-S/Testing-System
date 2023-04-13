@@ -1,8 +1,12 @@
 
-<?php include"connect.php";
-if(!isset($_SESSION['id'])){
-header("Location:unauthorizedentry.html");
-}
+<?php session_start();
+
+include"connect.php";
+echo($_SESSION['id']);
+$_SESSION['courseid']=$_POST['courseid'];
+// if(!isset($_POST['submit'])){
+// header("Location:unauthorizedentry.html");
+// }
 ?>
 
 <!DOCTYPE html>
@@ -39,9 +43,9 @@ header("Location:unauthorizedentry.html");
                 <a class="nav-link" href="#">Contact</a>
               </li>
               <li class="nav-item">
-                <form action="logout.php">
-                <input type="submit" class="nav-link" value="Logout">
-                 </form>
+              <form action="logout.php" method="post">
+  <button type="submit"  class="nav-link" style="background-color: transparent;border:none">Logout</button>
+</form>
               </li>
             </ul>
           </div>
@@ -65,7 +69,7 @@ header("Location:unauthorizedentry.html");
                         <i class='fas fa-desktop  fa-2x mr-3'></i>
                         <div >
                           <p class='subject-label'>".$_POST['name']."</p> 
-                          <p class='mb-0'> </p>
+                          <p class='mb-0'>". $_POST['courseid']."</p>
                         </div>
                         <form action='questions.php' method='POST'>
                        
