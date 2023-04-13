@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap CSS -->
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ 	<!-- Font Awesome Icons -->
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+ 	<!-- Google Fonts -->
+  	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+	<link href="css/courses.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark-themed Page with Centered Buttons</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+nTNSA3+PLV9a3vPFyNfW8wWoMnD1ERdkFVvXp"
+          crossorigin="anonymous">
+    <style>
+         body {
+        background-image: url("images/pic3.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .cta {
+        height: 85px;
+	display: inline-block;
+	padding: 10px 30px;
+	color: white;
+	background-color: transparent;
+	border: 2px solid rgb(232, 143, 8);
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-top: 30px;
+	transition: 0.3s ease;
+	transition-property: background-color, color;
+	margin-right: 40px;
+	border-radius: 50px;
+}
+
+.cta:hover {
+	color: black;
+	background-color: rgb(232, 143, 8);
+}
+
+
+
+
+        .btn-orange {
+            background-color: #ec843e;
+            color: #ffffff;
+            border-radius: 50px;
+            box-shadow: none;
+            border: none;
+            font-size: 2.5rem;
+            padding: 1.5rem 4rem;
+        }
+        .btn-orange:hover, .btn-orange:focus {
+            background-color: #ff8000;
+            color: #ffffff;
+        }
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .btn-spacing {
+            margin: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+		<div class="container">
+			<a class="navbar-brand" href="#"><img class = "mylogo" src="img/logo.jpg" alt="">BERHAN</a>          
+		</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+                </li>
+              
+           
+            </ul>
+          </div>
+	</nav>
+    <div class="container-fluid centered">
+        <div class="text-center">
+            <a href="register.html"><button class="cta">Register as a Student</button></a>
+            <a href="teacher reg.html"><button class="cta">Register as a Teacher</button></a>
+        </div>
+    </div>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+            integrity="sha384-cM1Z/Ew7N0e/6QO7Ggnf9c/IX7VZd09eu+EsV7ZKGh1fcU6Li/Hu6kQ2V7yUcJOG"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+nTNSA3+PLV9a3vPFyNfW8wWoMnD1ERdkFVvXp"
+            crossorigin="anonymous"></script>
+</body>
+</html>
