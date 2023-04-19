@@ -69,6 +69,11 @@ if(!(isset($_SESSION['id']))){
                                         <label class="form-group-label" for="course">Course Code:</label>
                                         <input type="text" class="form-control" id="question" name="courseid" placeholder="Please Insert the Course Code"required>
                                     </div>
+                                    <div class="form-group">
+                                        <br>
+                                        <label class="form-group-label" for="course">Time Allowed(minutes):</label>
+                                        <input type="text" class="form-control" id="question" name="timeall" placeholder="Please Enter the amount of Time allowed"required>
+                                    </div>
 									<div class="form-group">
 										<label class="form-group-label" for="date">Select a date:</label>
 										<input type="date" id="date" name="date" class="form-control">

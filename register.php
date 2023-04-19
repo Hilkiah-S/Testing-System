@@ -55,9 +55,10 @@ if(isset($_POST['submit']) && isset($_FILES['file'])){
 
 //  $_SESSION['email']=$email;
  
- $sql = "INSERT INTO users (fullname,email,password,picture)
- VALUES ('$fullname', '$email','$userpassword','$fileNewName')";
+ $sql = "INSERT INTO users (fullname,email,password,picture,verify)
+ VALUES ('$fullname', '$email','$userpassword','$fileNewName','false')";
 if (mysqli_multi_query($conn, $sql)) {
+    echo("<script>Account succefully </script>");
 header("Location:login.php");
 }
 //  if (mysqli_multi_query($conn, $sql)) {

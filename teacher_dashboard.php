@@ -2,11 +2,11 @@
 <?php session_start();
 
 include"connect.php";
-echo($_SESSION['id']);
+$_SESSION['timeall']=$_POST['timeall'];
 $_SESSION['courseid']=$_POST['courseid'];
-// if(!isset($_POST['submit'])){
-// header("Location:unauthorizedentry.html");
-// }
+if(!isset($_SESSION['id'])){
+header("Location:unauthorizedentry.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -71,9 +71,10 @@ $_SESSION['courseid']=$_POST['courseid'];
                           <p class='subject-label'>".$_POST['name']."</p> 
                           <p class='mb-0'>". $_POST['courseid']."</p>
                         </div>
+                        <br/>
                         <form action='questions.php' method='POST'>
                        
-                        <input type='submit' name='submit' class='btn btn-primary ml-auto' value='<i class='fas fa-plus'></i>'>
+                        <input type='submit' name='submit' class='btn btn-primary ml-auto' value='+'>
                         </form>                     </div>
                     </li>
 

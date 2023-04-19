@@ -1,4 +1,6 @@
-<?php require="connect.php"?>
+<?php require="connect.php";
+session_start();
+?>
 
 <?php include"connect.php";
 if(!isset($_SESSION['id'])){

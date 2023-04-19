@@ -17,10 +17,15 @@ $sqltwo="SELECT * FROM admins WHERE email='$mail'";
 $restwo=mysqli_query($conn,$sqltwo);
 $rowtwo=mysqli_fetch_array($restwo,MYSQLI_ASSOC);
 if($mail==$row['email'] && $userpassword==$row['password']){
-  // echo $row['fullname'];  
-  // echo $row['password']; 
+ 
   $_SESSION['id']=$row['ID'];
-  header("Location:stud_dashboard.php");
+  $_SESSION['email']=$row['email'];
+  if($row['verify']=='true'){
+  header("Location:stud_dashboard.php");}
+  else{
+    $_SESSION['phone']=$row['phone'];
+    header("Location:_sms.php");
+  }
 
 }
 else if ($mail==$rowone['email'] && $userpassword==$rowone['password']) {
@@ -34,7 +39,7 @@ else if ($mail==$rowone['email'] && $userpassword==$rowone['password']) {
     header("Location:unauthorizedentry.html");
     
   }
-  // header("Location:adminpage.php?id=1&email=$email");
+
 }
 else if($mail==$rowtwo['email'] && $userpassword==$rowtwo['password']){
   $_SESSION['id']=$rowtwo['ID'];
@@ -100,7 +105,7 @@ else{
             </form>
             <div class="mt-3 text-center">
                 <span>Don't have an account?</span>
-                <a href="register">Sign up</a>
+                <a href="registerfirst.html">Sign up</a>
               </div>
             </div>
           </div>

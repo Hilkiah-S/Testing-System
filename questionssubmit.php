@@ -4,6 +4,7 @@ session_start();
 include"connect.php"?>
 <?php 
 $courseid=$_SESSION['courseid'];
+$timeall=$_SESSION['timeall'];
 if(isset($_POST['firstsubmit'])){
 if(isset($_POST['answera'])){
     $answer=1;
@@ -24,8 +25,8 @@ $ChoiceC=$_POST['Choice3'];
 $ChoiceD=$_POST['Choice4'];
 $id=$_SESSION['id'];
 
-    $sql = "INSERT INTO questions (courseId,questions,answers,ChoiceA,ChoiceB,ChoiceC,ChoiceD,teacherId)
-    VALUES ('$courseid','$question', '$answer','$ChoiceA','$ChoiceB','$ChoiceC','$ChoiceD','$id')";
+    $sql = "INSERT INTO questions (courseId,questions,answers,ChoiceA,ChoiceB,ChoiceC,ChoiceD,teacherId,timeall)
+    VALUES ('$courseid','$question', '$answer','$ChoiceA','$ChoiceB','$ChoiceC','$ChoiceD','$id','$timeall')";
    if (mysqli_multi_query($conn, $sql)) {
     echo"<script>alert('Succefully Submitted')</script>";
    header("Location:questions.php");
@@ -54,8 +55,8 @@ if(isset($_POST['lastsubmit'])){
     $ChoiceD=$_POST['Choice4'];
     $id=$_SESSION['id'];
     
-        $sql = "INSERT INTO questions (questions,answers,ChoiceA,ChoiceB,ChoiceC,ChoiceD,teacherId)
-        VALUES ('$question', '$answer','$ChoiceA','$ChoiceB','$ChoiceC','$ChoiceD','$id')";
+    $sql = "INSERT INTO questions (courseId,questions,answers,ChoiceA,ChoiceB,ChoiceC,ChoiceD,teacherId,timeall)
+    VALUES ('$courseid','$question', '$answer','$ChoiceA','$ChoiceB','$ChoiceC','$ChoiceD','$id','$timeall')";
        if (mysqli_multi_query($conn, $sql)) {
         echo"<script>alert('Succefully Submitted')</script>";
        header("Location:submitcompleted.php");

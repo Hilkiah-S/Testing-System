@@ -8,7 +8,7 @@ header("Location:unauthorizedentry.html");
 <?php 
 
 include"connect.php";
-// echo($_SESSION['id']);
+echo($_SESSION['timeall']);
 ?>
 <!DOCTYPE html>
 <html>

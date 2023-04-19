@@ -3,22 +3,13 @@
 session_start();
 
 
-// Define the function you want to call
-// function myFunction() {
-//     // Do something
-// }
 
-// // Call the function every 1 second
-// while (true) {
-//     myFunction();
-//     sleep(1);
-// }
 ?>
 
 <?php include"connect.php";
-// if(!isset($_SESSION['id'])){
-// header("Location:unauthorizedentry.html");
-// }
+if(!isset($_SESSION['id'])){
+header("Location:unauthorizedentry.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -65,20 +56,20 @@ session_start();
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="my-5">PENDING REQUESTS</h1>
+                <h1 class="my-5">ALL RESULTS</h1>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>FULLNAME</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>ACTION</th>
+                            <th>COURSE CODE</th>
+                            <th>RESULT</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                            include"connect.php";
-                            $sql="SELECT * FROM teachers WHERE verify='false'";
+                           $mail=$_SESSION['email'];
+                            $sql="SELECT * FROM results WHERE email='$mail'";
                             $result = mysqli_query($conn,$sql);
 
                             if(!$result){
@@ -87,16 +78,9 @@ session_start();
                             while($row=mysqli_fetch_assoc($result)){
                                 $id=$row['ID'];
                                 echo "<tr>
-                                        <td>".$row['fullname']."</td>
-                                        <td>".$row['email']."</td>
-                                        <td>"."0".$row['phone']."</td>
-                                        <td>
-                                            <form action='verify.php' method='post'>
-                                                <input type='hidden'  name='getid' value='$id'/>
-                                                <input type='submit' value='VERIFY' name='submitone' class='btn btn-primary'/>
-                                                <input type='submit' value='REJECT' name='submittwo' class='btn btn-danger'/>
-                                                </form>
-                                        </td>
+                                        <td>".$row['courseid']."</td>
+                                        <td>".$row['result']."</td>
+                                       
                                     </tr>";
                             }
                         ?>

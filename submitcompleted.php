@@ -1,5 +1,6 @@
 
 <?php include"connect.php";
+session_start();
 if(!isset($_SESSION['id'])){
 header("Location:unauthorizedentry.html");
 }
@@ -22,6 +23,11 @@ header("Location:unauthorizedentry.html");
 	<title>Success Page</title>
 	
 	<style>
+		 .navbar {
+    height: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 		body {
 			background-color: #222;
 			color: #fff;
@@ -110,7 +116,27 @@ header("Location:unauthorizedentry.html");
 	</style>
 </head>
 <body>
-
+<nav class="navbar navbar-expand-lg">
+		
+			<a class="navbar-brand" href="#"><img class = "mylogo" src="img/logo.jpg" alt="">BERHAN</a>          
+		
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+                </li>
+              
+              <li class="nav-item">
+              <form action="logout.php" method="post">
+  <button type="submit"  class="nav-link" style="background-color: transparent;border:none">Logout</button>
+</form>
+              </li>
+            </ul>
+          </div>
+	</nav>
 	
 	
 	<div class="container">
